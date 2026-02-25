@@ -22,86 +22,6 @@ export default function RegPage() {
         return emailRegex.test(email)
     }
 
-    const handleEmailChange = (e) => {
-        const value = e.target.value
-        setEmail(value)
-        
-        if (value && !validateEmail(value)) {
-            setEmailError('Kérlek adj meg egy érvényes email címet (tartalmaznia kell @-t és .-ot)')
-        } else {
-            setEmailError('')
-        }
-    }
-
-    const handlePasswordChange = (e) => {
-        setPassword(e.target.value)
-    }
-
-    const handlePasswordAgainChange = (e) => {
-        setPasswordAgain(e.target.value)
-    }
-
-    const handlePhoneChange = (e) => {
-        setPhone(e.target.value)
-        
-        if (e.target.value && e.target.value.length < 11) {
-            setPhoneError('A telefonszám túl rövid')
-        } else {
-            setPhoneError('')
-        }
-    }
-
-    const validateForm = () => {
-        let isValid = true
-        let errors = {}
-
-        // Email validáció
-        if (!email) {
-            setEmailError('Az email cím megadása kötelező')
-            isValid = false
-        } else if (!validateEmail(email)) {
-            setEmailError('Kérlek adj meg egy érvényes email címet (tartalmaznia kell @-t és .-ot)')
-            isValid = false
-        } else {
-            setEmailError('')
-        }
-
-        // Jelszó validáció
-        if (!password) {
-            setPasswordError('A jelszó megadása kötelező')
-            isValid = false
-        } else if (password.length < 6) {
-            setPasswordError('A jelszónak legalább 6 karakter hosszúnak kell lennie')
-            isValid = false
-        } else if (password !== passwordAgain) {
-            setPasswordError('A két jelszó nem egyezik')
-            isValid = false
-        } else {
-            setPasswordError('')
-        }
-
-        // Telefonszám validáció
-        if (!phone) {
-            setPhoneError('A telefonszám megadása kötelező')
-            isValid = false
-        } else if (phone.length < 11) {
-            setPhoneError('A telefonszám túl rövid (legalább 11 karakter)')
-            isValid = false
-        } else {
-            setPhoneError('')
-        }
-
-        return isValid
-    }
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        
-        if (validateForm()) {
-            // Sikeres validáció után átirányítunk a /login oldalra
-            navigate('/login')
-        }
-    }
 
     return (
         <>
@@ -109,7 +29,7 @@ export default function RegPage() {
                 <img src={logo} className="logo" alt="Logo" />
             </div>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit=''>
                 <div className="form-container">
                     <div className="form-group">
                         <label>Email cím:</label>
@@ -117,7 +37,7 @@ export default function RegPage() {
                             type="email" 
                             placeholder="Email cím"
                             value={email}
-                            onChange={handleEmailChange}
+                            onChange=''
                             className={emailError ? 'error-input' : ''}
                         />
                         {emailError && <span className="error-message">{emailError}</span>}
@@ -129,8 +49,7 @@ export default function RegPage() {
                             type="password" 
                             placeholder="Jelszó"
                             value={password}
-                            onChange={handlePasswordChange}
-                            className={passwordError && passwordError.includes('jelszó') ? 'error-input' : ''}
+                            onChange=''
                         />
                         {passwordError && <span className="error-message">{passwordError}</span>}
                     </div>
@@ -141,7 +60,7 @@ export default function RegPage() {
                             type="password" 
                             placeholder="Jelszó"
                             value={passwordAgain}
-                            onChange={handlePasswordAgainChange}
+                            onChange=''
                             className={passwordError && passwordError.includes('egyezik') ? 'error-input' : ''}
                         />
                         {passwordError && <span className="error-message">{passwordError}</span>}
@@ -154,7 +73,7 @@ export default function RegPage() {
                             placeholder="Telefonszám"
                             maxLength={12}
                             value={phone}
-                            onChange={handlePhoneChange}
+                            onChange=''
                             className={phoneError ? 'error-input' : ''}
                         />
                         {phoneError && <span className="error-message">{phoneError}</span>}
