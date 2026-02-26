@@ -31,8 +31,8 @@ export default function Login() {
                 setHiba(data.error)
             }
             setUzenet(data.message)
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            navigate('/homepage')
+            // await new Promise(resolve => setTimeout(resolve, 600));
+            // return navigate('/homepage')
         } catch (error) {
             setHiba('Nem sikerult kapcsolodni a backendhez')
         }

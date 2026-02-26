@@ -37,7 +37,7 @@ export default function RegPage() {
         try {
             const data = await register(email, username, psw, phone)
             if(!data.ok) {
-                setHiba(data.error)
+                return setHiba(data.error)
             }
             setUzenet(data.message)
             await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 second
