@@ -1,10 +1,15 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from '../assets/Core_build-no-bg.png'
 import hatter from '../assets/Core_build_background.gif'
+import InputMezo from '../components/InputMezo.jsx'
 
 import '../style.css'
+import { login } from "../../api.js";
 
 export default function Login() {
+    const navigate = useNavigate()
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -26,14 +31,11 @@ export default function Login() {
                 setHiba(data.error)
             }
             setUzenet(data.message)
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            navigate('/homepage')
         } catch (error) {
             setHiba('Nem sikerult kapcsolodni a backendhez')
         }
-    }
-
-    const validateEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        return emailRegex.test(email)
     }
 
     return (
@@ -43,17 +45,13 @@ export default function Login() {
             </div>
 
             <div className="form-container">
-                <div className="form-group">
-                    <label>Email cím:</label>
-                    <input type="email" value={email} setValue={setEmail} placeholder="example@example.com" />
-                </div>
+                {hiba && <div className="alert alert-danger text-center my-2">{hiba}</div>}
+                {uzenet && <div className="alert alert-success text-center my-2">{uzenet}</div>}
 
-                <div className="form-group">
-                    <label>Jelszó:</label>
-                    <input type="password" value={password} setValue={setPassword} placeholder="Jelszó" />
-                </div>
+                <InputMezo label="Email" type="email" placeholder={"example@example.com"} value={email} setValue={setEmail} />
+                <InputMezo label="Jelszó" type="password" placeholder={"Írd be a jelszavad"} value={password} setValue={setPassword} />
             </div>
-            <a href='/homepage'><button className='Gomb'>BEJELENTKEZÉS</button></a>
+            <button className='Gomb' onClick={onLogin}>BEJELENTKEZÉS</button>
 
             <p className='regtext'>
                 Még nincs fiókod? <a href="/register"><span className='SecondLogin'>Regisztrálj!</span></a>
