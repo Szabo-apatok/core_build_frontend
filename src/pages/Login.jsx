@@ -21,20 +21,19 @@ export default function Login() {
         setUzenet('')
 
         if (!email || !password) {
-            setHiba('Kérem töltse ki az összes mezőt')
-            return
+            return setHiba('Kérem töltse ki az összes mezőt')
         }
 
         try {
             const data = await login(email, password)
-            if(!data.ok){
-                setHiba(data.error)
+            
+            if(data.error) {
+                return setHiba(data.error)
             }
             setUzenet(data.message)
-            // await new Promise(resolve => setTimeout(resolve, 600));
-            // return navigate('/homepage')
+            // setTimeout(() => navigate('/homepage'), 600)
         } catch (error) {
-            setHiba('Nem sikerult kapcsolodni a backendhez')
+            return setHiba('Nem sikerult kapcsolodni a backendhez')
         }
     }
 

@@ -11,9 +11,6 @@ export async function register(email, username, password, phone) {
 
     const data = await res.json();
 
-    if(data.error){
-        return data
-    }
     return data
 }
 
@@ -28,8 +25,5 @@ export async function login(email, password) {
 
     const data = await res.json();
 
-    if(data.error) {
-        return data
-    }
     return data
 }
