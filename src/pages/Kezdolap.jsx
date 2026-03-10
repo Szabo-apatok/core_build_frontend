@@ -7,6 +7,8 @@ import '../style.css'
 function Kezdolap() {
   return (
     <>
+    <div className="form-container"/>
+    
       <img src={logo} className="logo" alt="Logo" />
       <img src={hatter} className="body-background" alt="Background" />
       <h1 className='KezdolapCim'>ʙᴜɪʟᴅɪɴɢ ᴛʜᴇ ꜰᴜᴛᴜʀᴇ, ᴏɴᴇ ʟɪɴᴇ ᴀᴛ ᴀ ᴛɪᴍᴇ</h1>

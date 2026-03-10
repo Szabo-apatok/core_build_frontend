@@ -24,6 +24,7 @@
   margin: auto;
   height: 3.3em;
   padding: 1.2em;
+  height: 5.7rem;
   display: block;
 }
 
@@ -31,6 +32,7 @@
   /* margin: auto; */
   height: 3.3em;
   padding: 1.2em;
+  height: 5.7rem;
   display: block;
 }
 
@@ -45,7 +47,7 @@
 .Gomb{
   cursor: pointer;
   padding: 1.5rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
   border: 0;
   color: white;
   font-weight: 400;
@@ -64,19 +66,19 @@
   position: fixed;
   top: 0;
   left: 0;
-  margin: auto;
+  /* margin: auto; */
   width: 100%;
   background-color: #000519;
 }
 
 .form-container {
   margin: auto;
-  margin-top: 190px;
-  width: 350px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px;
+  margin-top: 200px;
+  width: 380px;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* text-align: center; */
+  padding: 30px;
 }
 
 .form-group {
@@ -141,6 +143,10 @@ a {
     font-size: 1.5rem;
     margin-top: 6rem;
   }
+  .form-container{
+    width: 90%;
+    margin-top: 350px;
+  }
   .Gomb {
     font-size: 1.2rem;
     padding: 1rem 1.5rem;
@@ -153,8 +159,12 @@ a {
     margin-top: 2rem;
   }
   .logo {
-    height: 3em;
+    height: 6em;
     padding: 1em;
+  }
+  .form-container{
+    width: 90%;
+    margin-top: 250px;
   }
   .KezdolapCim {
     font-size: 1.1rem;
