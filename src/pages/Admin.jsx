@@ -1,7 +1,9 @@
-import { useState, useEffect, use } from 'react'
+import { useState, useEffect } from 'react'
 import logo from '../assets/Core_build-no-bg.png'
 import hatter from '../assets/Core_build_background.gif'
 import UserInfo from '../components/UserInfo'
+import { deleteFelh } from '../../api'
+import OrderInfo from '../components/OrderInfo'
 
 export default function Admin() {
     const [users, setUsers] = useState([])
@@ -10,11 +12,32 @@ export default function Admin() {
     const [message, setMessage] = useState('')
 
     useEffect(() => {
-        fetch("http://127.0.0.1:4000/users/allusers")
+        fetch("http://127.0.0.1:4000/users/all")
             .then(res => res.json())
             .then(data => setUsers(data)
-            .catch(err => console.error(err)))
+                .catch(err => console.error(err)))
     }, [])
+
+    useEffect(() => {
+        fetch("http://127.0.0.1:4000/orders/all")
+            .then(res => res.json())
+            .then(data => setOrders(data)
+                .catch(err => console.error(err)))
+    }, [])
+
+    async function deleteUser(id) {
+        try {
+            const data = await deleteFelh(id)
+            if (!data.ok) {
+                return setError(data.error)
+            }
+            else{
+                return setUzenet(data.message)
+            }
+        } catch (error) {
+            setHiba('Nem sikerult kapcsolodni a backendhez')
+        }
+    }
 
     async function onDelete(id) {
         setMessage('')
@@ -44,6 +67,7 @@ export default function Admin() {
                             <th>ID</th>
                             <th>Email</th>
                             <th>Felhasználónév</th>
+                            <th>Telefonszám</th>
                             <th>Szerepkör</th>
                             <th>Műveletek</th>
                         </tr>
@@ -51,12 +75,31 @@ export default function Admin() {
                     <tbody>
                         {users.map(user => (
                             <UserInfo
-                                key={user.id}
-                                id={user.userid}
+                                id={user.user_id}
                                 email={user.email}
                                 username={user.username}
+                                phone_num={user.phone_num}
                                 role={user.role}
                                 onDelete={onDelete}
+                            />
+                        ))}
+                    </tbody>
+                </table>
+
+                <h2>Rendelések kezelése</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Rendelés Id</th>
+                            <th>Műveletek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {orders.map(order => (
+                            <OrderInfo
+                                order_id={order.order_id}
+                                user_id={order.user_id}
                             />
                         ))}
                     </tbody>
