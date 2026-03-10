@@ -30,4 +30,15 @@ export async function login(email, password) {
     return data
 }
 
+export async function deleteFelh(id) {
+    const res = await fetch(`${BACKEND_URL}/delete/${id}`, {
+        method: 'DELETE',
+        credentials:'include',
+    });
+
+    const data = await res.json();
+
+    return data
+}
+
 // valami
