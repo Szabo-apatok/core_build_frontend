@@ -1,4 +1,4 @@
-const BACKEND_URL = 'http://127.0.0.1:4000/users';
+const BACKEND_URL = '/users';
 
 export async function register(email, username, password, phone) {
     const res = await fetch(`${BACKEND_URL}/register`, {
@@ -6,6 +6,7 @@ export async function register(email, username, password, phone) {
         headers: {
             'Content-Type': 'application/json'
         },
+        credentials:'include',
         body: JSON.stringify({ email, username, password, phone })
     });
 
@@ -20,6 +21,7 @@ export async function login(email, password) {
         headers: {
             'Content-Type': 'application/json',
         },
+        credentials:'include',
         body: JSON.stringify({ email, password }),
     });
 

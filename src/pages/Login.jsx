@@ -31,7 +31,7 @@ export default function Login() {
                 return setHiba(data.error)
             }
             setUzenet(data.message)
-            // setTimeout(() => navigate('/homepage'), 600)
+            setTimeout(() => navigate('/homepage'), 600)
         } catch (error) {
             return setHiba('Nem sikerult kapcsolodni a backendhez')
         }
