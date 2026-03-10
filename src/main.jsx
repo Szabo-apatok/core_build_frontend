@@ -6,6 +6,7 @@ import Kezdolap from '../src/pages/Kezdolap.jsx'
 import RegPage from '../src/pages/RegPage.jsx'
 import Login from '../src/pages/Login.jsx'
 import Homepage from '../src/pages/Homepage.jsx'
+import Admin from './pages/Admin.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -14,6 +15,7 @@ createRoot(document.getElementById('root')).render(
       <Route path="/register" element={<RegPage />} />
       <Route path='/login' element={<Login />} />
       <Route path='/homepage' element={<Homepage />} />
+      <Route path='/admin' element={<Admin />} />
     </Routes>
   </BrowserRouter>,
 )
