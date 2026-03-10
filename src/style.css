@@ -134,6 +134,27 @@ a {
   border-radius: 3px;
 }
 
+.section{
+  margin-top: 180px;
+  font-size: 20px;
+}
+
+th{
+  /* padding: 15px; */
+  /* width: 150px; */
+  background-color: #000519;
+  color: white;
+}
+
+td{
+  padding: 8px;
+  width: 215px;
+}
+
+table{
+  background: rgba(46, 46, 46, 0.4);
+}
+
 @media (max-width: 900px) {
   #root {
     max-width: 95vw;
