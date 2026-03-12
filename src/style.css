@@ -22,15 +22,15 @@
 
 .logo {
   margin: auto;
-  height: 3-3em;
-  padding: 1-2em;
+  height: 3rem;
+  padding: 1rem;
   height: 5.7rem;
   display: block;
 }
 
 .HPLogo{
   /* margin: auto; */
-  height: 3.3em;
+  height: 3.3rem;
   padding: 1.2em;
   height: 5.7rem;
   display: block;
@@ -153,6 +153,10 @@ td{
 
 table{
   background: rgba(46, 46, 46, 0.4);
+}
+
+.card{
+  margin-top: 150px;
 }
 
 @media (max-width: 900px) {

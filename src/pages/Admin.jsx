@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import logo from '../assets/Core_build-no-bg.png'
 import hatter from '../assets/Core_build_background.gif'
 import UserInfo from '../components/UserInfo'
@@ -108,6 +109,8 @@ export default function Admin() {
 
             {error && <div className="alert alert-danger text-center my-2">{error}</div>}
             {message && <div className="alert alert-success text-center my-2">{message}</div>}
+
+            <Link to="/homepage" className="text-danger text-decoration-none fs-4">Vissza a főoldalra</Link>
 
             <img src={hatter} className="body-background" alt="Background" />
         </>

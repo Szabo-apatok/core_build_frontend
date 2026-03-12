@@ -41,4 +41,26 @@ export async function deleteFelh(id) {
     return data
 }
 
+export async function whoami() {
+    const res = await fetch(`${BACKEND_URL}/whoami`, {
+        method: 'GET',
+        credentials:'include',
+    });
+
+    const data = await res.json();
+
+    return data
+}
+
+export async function logout() {
+    const res = await fetch(`${BACKEND_URL}/logout`, {
+        method: 'POST',
+        credentials:'include',
+    });
+
+    const data = await res.json();
+
+    return data
+}
+
 // valami
