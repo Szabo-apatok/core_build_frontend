@@ -8,7 +8,7 @@ export default function NavBar({ user, onLogout }) {
     const isLoggedIn = !!user;
     // console.log(isLoggedIn);
     const isAdmin = user?.role === 'admin';
-    // console.log(isAdmin);
+    console.log("Admin:", isAdmin);
 
     return (
         <div className="d-flex align-items-center py-1">

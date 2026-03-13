@@ -32,7 +32,7 @@ export default function Admin() {
             if (!data.ok) {
                 return setError(data.error)
             }
-            else{
+            else {
                 return setUzenet(data.message)
             }
         } catch (error) {
@@ -110,7 +110,12 @@ export default function Admin() {
             {error && <div className="alert alert-danger text-center my-2">{error}</div>}
             {message && <div className="alert alert-success text-center my-2">{message}</div>}
 
-            <Link to="/homepage" className="text-danger text-decoration-none fs-4">Vissza a főoldalra</Link>
+            <div className="card-footer bg-transparent border-0 pb-4 mt-5 text-center">
+                <Link to="/homepage" className="btn btn-outline-light">
+                    <i className="bi bi-arrow-left"></i>
+                    Vissza a főoldalra
+                </Link>
+            </div>
 
             <img src={hatter} className="body-background" alt="Background" />
         </>
