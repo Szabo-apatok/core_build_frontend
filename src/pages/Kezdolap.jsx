@@ -12,7 +12,7 @@ function Kezdolap() {
       <img src={logo} className="logo" alt="Logo" />
       <img src={hatter} className="body-background" alt="Background" />
       <h1 className='KezdolapCim'>ʙᴜɪʟᴅɪɴɢ ᴛʜᴇ ꜰᴜᴛᴜʀᴇ, ᴏɴᴇ ʟɪɴᴇ ᴀᴛ ᴀ ᴛɪᴍᴇ</h1>
-      <a href='/register'><button className='Gomb'>KEZDD EL AZ ÉPÍTÉST</button></a>
+      <a href='/login'><button className='Gomb'>KEZDD EL AZ ÉPÍTÉST</button></a>
     </>
   )
 }
