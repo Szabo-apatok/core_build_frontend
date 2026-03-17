@@ -8,6 +8,7 @@ import OrderInfo from '../components/OrderInfo'
 
 export default function Admin() {
     const [users, setUsers] = useState([])
+    console.log(users);
     const [orders, setOrders] = useState([])
     const [error, setError] = useState('')
     const [message, setMessage] = useState('')
