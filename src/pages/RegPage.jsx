@@ -42,7 +42,7 @@ export default function RegPage() {
             setUzenet(data.message)
             setTimeout(() => navigate('/login'), 600)
         } catch (err) {
-            return setHiba('Nem sikerult kapcsolodni a backendhez')
+           return setHiba('Nem sikerult kapcsolodni a backendhez')
         }
     }
 
