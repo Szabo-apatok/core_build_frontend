@@ -36,15 +36,13 @@ export default function RegPage() {
 
         try {
             const data = await register(email, username, psw, phone)
-            if(!data.ok) {
+            if(data.error) {
                 return setHiba(data.error)
             }
             setUzenet(data.message)
-            await new Promise(resolve => setTimeout(resolve, 2000)); // Wait 2 second
-            login(email, psw)
-            navigate('/login')
+            setTimeout(() => navigate('/login'), 600)
         } catch (err) {
-            setHiba('Nem sikerult kapcsolodni a backendhez')
+           return setHiba('Nem sikerult kapcsolodni a backendhez')
         }
     }
 
