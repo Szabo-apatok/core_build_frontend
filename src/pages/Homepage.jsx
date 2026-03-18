@@ -55,10 +55,10 @@ import '../style.css'
 import { whoami, logout } from '../../api'
 
 // Termékképek (cseréld ki!)
-import product1 from '../assets/Core_build-no-bg.png'
-import product2 from '../assets/Core_build-no-bg.png'
-import product3 from '../assets/Core_build-no-bg.png'
-import product4 from '../assets/Core_build-no-bg.png'
+import product1 from '../assets/pc1.png'
+import product2 from '../assets/pc2.png'
+import product3 from '../assets/pc3.png'
+import product4 from '../assets/pc4.png'
 
 export default function Homepage() {
     const navigate = useNavigate()
@@ -68,10 +68,10 @@ export default function Homepage() {
 
     // Termékek listája
     const products = [
-        { id: 1, name: "Gamer PC PRO", price: "299.990 Ft", image: product1, rating: 4.8 },
-        { id: 2, name: "RTX 4070 Ti", price: "389.990 Ft", image: product2, rating: 4.9 },
-        { id: 3, name: "AMD Ryzen 7", price: "129.990 Ft", image: product3, rating: 4.7 },
-        { id: 4, name: "32GB RAM Kit", price: "49.990 Ft", image: product4, rating: 4.6 }
+        { id: 1, name: "Gamer PC PRO", price: "299.990 Ft", image: product1},
+        { id: 2, name: "RTX 4070 Ti", price: "389.990 Ft", image: product2},
+        { id: 3, name: "AMD Ryzen 7", price: "129.990 Ft", image: product3},
+        { id: 4, name: "32GB RAM Kit", price: "49.990 Ft", image: product4}
     ]
 
     // Automatikus léptetés 4mp-ként
@@ -129,9 +129,6 @@ export default function Homepage() {
                         <div className="product-card prev">
                             <img src={products[prevIndex].image} alt={products[prevIndex].name} />
                             <h3>{products[prevIndex].name}</h3>
-                            <div className="rating">
-                                {'★'.repeat(Math.floor(products[prevIndex].rating))} ({products[prevIndex].rating})
-                            </div>
                             <p className="price">{products[prevIndex].price}</p>
                             <button>Kosárba</button>
                         </div>
@@ -140,9 +137,6 @@ export default function Homepage() {
                         <div className="product-card active">
                             <img src={products[currentIndex].image} alt={products[currentIndex].name} />
                             <h3>{products[currentIndex].name}</h3>
-                            <div className="rating">
-                                {'★'.repeat(Math.floor(products[currentIndex].rating))} ({products[currentIndex].rating})
-                            </div>
                             <p className="price">{products[currentIndex].price}</p>
                             <button>Kosárba</button>
                         </div>
@@ -151,9 +145,6 @@ export default function Homepage() {
                         <div className="product-card next">
                             <img src={products[nextIndex].image} alt={products[nextIndex].name} />
                             <h3>{products[nextIndex].name}</h3>
-                            <div className="rating">
-                                {'★'.repeat(Math.floor(products[nextIndex].rating))} ({products[nextIndex].rating})
-                            </div>
                             <p className="price">{products[nextIndex].price}</p>
                             <button>Kosárba</button>
                         </div>
