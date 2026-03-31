@@ -1,0 +1,303 @@
+/* ComputerBuilder.css */
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem auto 0;
+    position: relative;
+    z-index: 1;
+    animation: fadeInDown 0.8s ease-out;
+    flex-wrap: wrap;
+  }
+  
+  .builder-logo {
+    max-width: 200px;
+    width: auto;
+    height: auto;
+    display: block;
+  }
+
+  .builder-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+    font-size: 1.3rem;
+  }
+  
+  .logo-divider {
+    color: #667eea;
+    font-size: 2rem;
+    font-weight: 300;
+    opacity: 0.8;
+  }
+  
+  
+  .builder-container {
+    max-width: 800px;
+    margin: 2.5rem auto 2rem;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .components-list {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: visible; /* Módosítva visible-re, hogy a dropdown kilógjon */
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .component-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.2s ease;
+    position: relative; /* Hozzáadva */
+  }
+  
+  .component-row:last-child {
+    border-bottom: none;
+  }
+  
+  .component-row:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  
+  .component-label {
+    width: 180px;
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    color: #667eea;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .component-selector {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    position: relative;
+  }
+  
+  .dropdown-btn {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+  }
+  
+  .dropdown-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #667eea;
+  }
+  
+  .dropdown-btn.selected {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.3);
+  }
+  
+  .dropdown-arrow {
+    transition: transform 0.2s ease;
+  }
+  
+  .dropdown-arrow.rotate {
+    transform: rotate(180deg);
+  }
+  
+  /* Új wrapper a dropdown options-nek */
+  .dropdown-options-wrapper {
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* Módosított dropdown options - most relative pozícióval, ami kitolja a tartalmat */
+  .dropdown-options {
+    position: relative;
+    margin-top: 8px;
+    background: #1a1a2e;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-height: 250px;
+    overflow-y: auto;
+    animation: dropdownFadeIn 0.2s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+  
+  .dropdown-option {
+    padding: 0.75rem 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-size: 0.85rem;
+  }
+  
+  .dropdown-option:hover {
+    background: rgba(102, 126, 234, 0.2);
+    padding-left: 1.5rem;
+  }
+  
+  .dropdown-option.active {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+  
+  @keyframes dropdownFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .builder-summary {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .summary-header h3 {
+    color: #667eea;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+  
+  .reset-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .reset-btn:hover {
+    background: rgba(255, 100, 100, 0.3);
+    color: white;
+  }
+  
+  .summary-content {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .summary-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .summary-content li {
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .summary-content li strong {
+    color: #667eea;
+  }
+  
+  .empty-summary {
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+  }
+  
+  .dropdown-options::-webkit-scrollbar,
+  .summary-content::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .dropdown-options::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+  }
+  
+  .dropdown-options::-webkit-scrollbar-thumb {
+    background: #667eea;
+    border-radius: 3px;
+  }
+  
+  @media (max-width: 768px) {
+    .builder-container {
+      padding: 1rem;
+    }
+    
+    .builder-logo {
+      max-width: 120px;
+    }
+    
+    .logo-tervezo {
+      font-size: 1rem;
+    }
+    
+    .logo-divider {
+      font-size: 1.2rem;
+    }
+    
+    .logo-container {
+      gap: 0.5rem;
+    }
+    
+    .component-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .component-label {
+      width: auto;
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.75rem 1rem;
+    }
+    
+    .component-selector {
+      padding: 0.75rem 1rem;
+    }
+    
+    .dropdown-options {
+      left: 0;
+      right: 0;
+    }
+  }
