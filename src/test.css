@@ -214,6 +214,23 @@
     background: rgba(255, 100, 100, 0.3);
     color: white;
   }
+
+  .megrendeles-btn {
+    background: rgba(230, 255, 184, 0.199);
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1rem;
+  }
+  
+  .megrendeles-btn:hover {
+    background: rgba(118, 255, 100, 0.3);
+    color: white;
+  }
   
   .summary-content {
     max-height: 200px;

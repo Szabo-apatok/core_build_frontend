@@ -108,19 +108,19 @@ export default function ComputerBuilder() {
     },
     ssd1: {
       label: "SSD MEGHAJTÓ 1",
-      options: storages.filter(s => 
+      options: storages.filter(s =>
         s.toLowerCase().includes('ssd') || s.toLowerCase().includes('nvme')
       )
     },
     ssd2: {
       label: "SSD MEGHAJTÓ 2",
-      options: ["Nincs / Később", ...storages.filter(s => 
+      options: ["Nincs / Később", ...storages.filter(s =>
         s.toLowerCase().includes('ssd') || s.toLowerCase().includes('nvme')
       )]
     },
     merevlemez: {
       label: "MEREVLEMEZ",
-      options: ["Nincs / Később", ...storages.filter(s => 
+      options: ["Nincs / Később", ...storages.filter(s =>
         s.toLowerCase().includes('hdd') || s.toLowerCase().includes('barracuda')
       )]
     },
@@ -180,19 +180,11 @@ export default function ComputerBuilder() {
                 {comp.label}
               </div>
               <div className="component-selector">
-                <button
-                  className={`dropdown-btn ${selections[key] ? 'selected' : ''}`}
-                  onClick={() => toggleDropdown(key)}
-                >
+                <button className={`dropdown-btn ${selections[key] ? 'selected' : ''}`} onClick={() => toggleDropdown(key)}>
                   <span>
                     {selections[key] || "Válassz alkatrészt..."}
                   </span>
-                  <svg
-                    className={`dropdown-arrow ${openDropdown === key ? 'rotate' : ''}`}
-                    viewBox="0 0 24 24"
-                    width="20"
-                    height="20"
-                  >
+                  <svg className={`dropdown-arrow ${openDropdown === key ? 'rotate' : ''}`} viewBox="0 0 24 24" width="20" height="20">
                     <path fill="currentColor" d="M7 10l5 5 5-5H7z" />
                   </svg>
                 </button>
@@ -200,11 +192,7 @@ export default function ComputerBuilder() {
                 {openDropdown === key && (
                   <div className="dropdown-options">
                     {comp.options.map((option, idx) => (
-                      <div
-                        key={idx}
-                        className={`dropdown-option ${selections[key] === option ? 'active' : ''}`}
-                        onClick={() => selectOption(key, option)}
-                      >
+                      <div key={idx} className={`dropdown-option ${selections[key] === option ? 'active' : ''}`} onClick={() => selectOption(key, option)}>
                         {option}
                       </div>
                     ))}
@@ -218,12 +206,7 @@ export default function ComputerBuilder() {
         <div className="builder-summary">
           <div className="summary-header">
             <h3>📦 ÖSSZEÁLLÍTÁS</h3>
-            <button
-              className="reset-btn"
-              onClick={() => setSelections({})}
-            >
-              Összes törlése
-            </button>
+            <button className="reset-btn" onClick={() => setSelections({})}>Összes törlése</button>
           </div>
           <div className="summary-content">
             {Object.values(selections).filter(Boolean).length === 0 ? (
@@ -238,6 +221,7 @@ export default function ComputerBuilder() {
                     </li>
                   );
                 })}
+                <button className="megrendeles-btn" onClick="">Megrendelés</button>
               </ul>
             )}
           </div>
