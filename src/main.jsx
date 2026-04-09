@@ -19,7 +19,7 @@ createRoot(document.getElementById('root')).render(
       <Route path='/homepage' element={<Homepage />} />
       <Route path='/admin' element={<Admin />} />
       <Route path='/profile' element={<Profile />} />
-      <Route path='/test' element={<Test/>}/>
+      <Route path='/tervezo' element={<Test/>}/>
     </Routes>
   </BrowserRouter>,
 )

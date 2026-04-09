@@ -116,7 +116,7 @@ export default function Homepage() {
                     <p>Válogass a legújabb alkatrészek közül, és mi összerakjuk neked.</p>
                     <p>Gyorsan, garanciával.</p>
                     <div className="buttons">
-                        <button className="primary">Irány a tervező!</button>
+                        <a href="/tervezo"><button className="primary">Irány a tervező!</button></a>
                     </div>
                 </div>
 
