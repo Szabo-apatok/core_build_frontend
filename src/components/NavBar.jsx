@@ -14,7 +14,7 @@ export default function NavBar({ user, onLogout }) {
         <div className="d-flex align-items-center py-1">
             <img src={logo} className="HPLogo" alt="Logo" />
             <div className="text-decoration-none d-flex mx-auto" style={{ gap: "155px" }}>
-                <Link to="/aboutme" className="text-white text-decoration-none py-1 fs-4">Rólunk</Link>
+                <Link to="#rolunk" className="text-white text-decoration-none py-1 fs-4">Rólunk</Link>
                 <Link to="/contact" className="text-white text-decoration-none py-1 fs-4">Kapcsolat</Link>
                 {isLoggedIn ? (
                     <>
