@@ -12,12 +12,14 @@ export default defineConfig({
   ],
   server: {
     proxy: {
-      '/users': 
-        {
-          target: 'http://localhost:4000',
-          changeOrigin: true
-        }
-        
+      '/users': {
+        target: 'http://localhost:4000',
+        changeOrigin: true,
+      },
+      // '/tervezo': {
+      //   target: 'http://localhost:4000',
+      //   changeOrigin: true,
+      // },
     },
   },
 })
