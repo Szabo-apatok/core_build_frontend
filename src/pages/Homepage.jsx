@@ -1,49 +1,3 @@
-// import { useEffect, useState } from "react";
-// import { useNavigate } from "react-router-dom";
-
-// import logo from '../assets/Core_build-no-bg.png'
-// import hatter from '../assets/Core_build_background.gif'
-// import NavBar from '../components/NavBar'
-// import '../style.css'
-
-// import { whoami, logout } from '../../api'
-
-// export default function Homepage() {
-//     const navigate = useNavigate()
-//     const [user, setUser] = useState(null)
-//     const [errorUser, setErrorUser] = useState('')
-
-//     useEffect(() => {
-//         async function load() {
-//             const data = await whoami()
-//             // console.log(data);
-//             if (data.error) {
-//                 return setErrorUser(data.error)
-//             }
-//             return setUser(data)
-//         }
-//         load()
-//     }, [])
-
-//     async function onLogout() {
-//         const data = await logout()
-//         if (data.error) {
-//             return setErrorUser(data.error)
-//         }
-//         setUser(null)
-//         navigate('/')
-//     }
-
-//     return (
-//         <>
-//             <div className='Fejlec'>
-//                 <NavBar user={user} onLogout={onLogout}/>
-//             </div>
-//             <img src={hatter} className="body-background" alt="Background" />
-//         </>
-//     )
-// }
-
 import { useEffect, useState, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -67,8 +21,9 @@ export default function Homepage() {
     const [errorUser, setErrorUser] = useState('')
     const [currentIndex, setCurrentIndex] = useState(0)
 
-    // Referencia a Rólunk szekcióhoz
+    // Referenciák a szekciókhoz
     const aboutSectionRef = useRef(null)
+    const contactSectionRef = useRef(null)
 
     // Termékek listája
     const products = [
@@ -86,7 +41,7 @@ export default function Homepage() {
         return () => clearInterval(timer)
     }, [products.length])
 
-    // A Homepage komponens useEffect-je a görgetéshez - ezt cseréld ki a meglévőre
+    // Görgetés a Rólunk szekcióhoz
     useEffect(() => {
         if (location.hash === '#rolunk' && aboutSectionRef.current) {
             setTimeout(() => {
@@ -95,10 +50,23 @@ export default function Homepage() {
                     block: 'start'
                 });
             }, 100);
-            // Tisztítsuk meg az URL-t a hash-től (opcionális)
             window.history.replaceState(null, '', '/');
         }
     }, [location]);
+
+    //Görgetés a Kapcsolat szekcióhoz
+    useEffect(() => {
+        if (location.hash === '#kapcsolat' && contactSectionRef.current) {
+            setTimeout(() => {
+                contactSectionRef.current?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 100);
+            window.history.replaceState(null, '', '/');
+        }
+    }, [location]);
+
 
     useEffect(() => {
         async function load() {
@@ -116,7 +84,6 @@ export default function Homepage() {
         navigate('/')
     }
 
-    // Következő index kiszámítása (halvány kártyához)
     const nextIndex = (currentIndex + 1) % products.length
     const prevIndex = (currentIndex - 1 + products.length) % products.length
 
@@ -128,7 +95,6 @@ export default function Homepage() {
             <img src={hatter} className="body-background" alt="Background" />
 
             <div className="homepage-content">
-                {/* BAL OLDAL - Egyszerű szöveg */}
                 <div className="left-side">
                     <h1>Építsd meg az álmaid gépét</h1>
                     <p>Válogass a legújabb alkatrészek közül, és mi összerakjuk neked.</p>
@@ -138,12 +104,10 @@ export default function Homepage() {
                     </div>
                 </div>
 
-                {/* JOBB OLDAL - Csak ez az elem módosul */}
                 <div className="popular-section">
                     <h2 className="section-title">Népszerű termékek</h2>
 
                     <div className="carousel-container">
-                        {/* Előző kártya (halvány) */}
                         <div className="product-card prev">
                             <img src={products[prevIndex].image} alt={products[prevIndex].name} />
                             <h3>{products[prevIndex].name}</h3>
@@ -151,7 +115,6 @@ export default function Homepage() {
                             <button>Kosárba</button>
                         </div>
 
-                        {/* Aktuális kártya (középen) */}
                         <div className="product-card active">
                             <img src={products[currentIndex].image} alt={products[currentIndex].name} />
                             <h3>{products[currentIndex].name}</h3>
@@ -159,7 +122,6 @@ export default function Homepage() {
                             <button>Kosárba</button>
                         </div>
 
-                        {/* Következő kártya (halvány) */}
                         <div className="product-card next">
                             <img src={products[nextIndex].image} alt={products[nextIndex].name} />
                             <h3>{products[nextIndex].name}</h3>
@@ -181,7 +143,7 @@ export default function Homepage() {
                 </div>
             </div>
 
-
+            {/* RÓLUNK SZEKCIÓ */}
             <div ref={aboutSectionRef} id="rolunk" className="about-section">
                 <div className="about-container">
                     <h2 className="about-title">Rólunk</h2>
@@ -239,6 +201,50 @@ export default function Homepage() {
                                 <div className="stat-label">Garancia</div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div ref={contactSectionRef} id="kapcsolat" className="contact-section">
+                <div className="contact-container">
+                    <h2 className="contact-title">Kapcsolat</h2>
+
+                    {/* Három kártya egymás mellett */}
+                    <div className="contact-cards-wrapper">
+                        <div className="contact-card">
+                            <div className="contact-icon">📍</div>
+                            <h3>Címünk</h3>
+                            <p>4030 Debrecen,</p>
+                            <p>Budai Ézsaiás u. 8/A.</p>
+                        </div>
+
+                        <div className="contact-card">
+                            <div className="contact-icon">📞</div>
+                            <h3>Telefon</h3>
+                            <p>+36 1 234 5678</p>
+                            <p>H-P: 9:00 - 18:00</p>
+                        </div>
+
+                        <div className="contact-card">
+                            <div className="contact-icon">✉️</div>
+                            <h3>Email</h3>
+                            <p>info@corebuild.hu</p>
+                            <p>support@corebuild.hu</p>
+                        </div>
+                    </div>
+
+                    {/* Térkép */}
+                    <div className="contact-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2692.482489123456!2d21.6391568!3d47.5224924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47470e7b5a1234c1%3A0xb75ef6ef959d3877!2sBudai%20%C3%89zsai%C3%A1s%20u.%208%2FA%2C%20Debrecen%2C%204030!5e0!3m2!1shu!2shu!4v1744281520000!5m2!1shu!2shu"
+                            width="100%"
+                            height="350"
+                            style={{ border: 0, borderRadius: '20px' }}
+                            allowFullScreen=""
+                            loading="lazy"
+                            title="Google Maps - Debrecen, Budai Ézsaiás u. 8/A"
+                        ></iframe>
                     </div>
                 </div>
             </div>
