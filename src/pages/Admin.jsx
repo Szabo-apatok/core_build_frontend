@@ -63,7 +63,7 @@ export default function Admin() {
 
             <div className="section text-white">
                 <h2>Felhasználók kezelése</h2>
-                <table>
+                <table className='user-table'>
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -88,8 +88,8 @@ export default function Admin() {
                     </tbody>
                 </table>
 
-                <h2>Rendelések kezelése</h2>
-                <table>
+                <h2 className='order-top'>Rendelések kezelése</h2>
+                <table className='order-table'>
                     <thead>
                         <tr>
                             <th>ID</th>

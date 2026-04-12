@@ -20,6 +20,23 @@
   margin-top: 5rem;
 }
 
+.order-top{
+  margin-top: 1.5rem;
+}
+
+.order-table{
+  margin: auto;
+  margin-top: 20px;
+  width: 80%;
+  border-collapse: collapse;
+}
+
+.user-table{
+  margin: auto;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
 .logo {
   margin: auto;
   height: 3rem;
