@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 
 import hatter from '../assets/Core_build_background.gif'
-import { whoami } from "../../api"
+import { whoami, logout } from "../../api"
 
 import NavBar from "../components/NavBar"
 
@@ -13,6 +13,7 @@ export default function Profile() {
     const [orders, setOrders] = useState([])
     const [error, setError] = useState('')
     const [message, setMessage] = useState('')
+    const [errorUser, setErrorUser] = useState('')
     const [loading, setLoading] = useState(true)
 
     const navigate = useNavigate()
@@ -33,10 +34,17 @@ export default function Profile() {
         checkAuth()
     }, [navigate])
 
+    async function onLogout() {
+        const data = await logout()
+        if (data.error) return setErrorUser(data.error)
+        setUser(null)
+        navigate('/')
+    }
+
     return (
         <>
             <div className='Fejlec mb-4'>
-                <NavBar user={user} onLogout={() => { }} />
+                <NavBar user={user} onLogout={logout} />
             </div>
 
             <div className="container mt-4">
@@ -99,6 +107,11 @@ export default function Profile() {
                                 <Link to="/homepage" className="btn btn-outline-light">
                                     <i className="bi bi-arrow-left"></i>
                                     Vissza a főoldalra
+                                </Link>
+                                
+                                <Link to="/" onClick={onLogout} className="btn btn-outline-light" style={{ marginLeft: '10px' }}>
+                                    <i className="bi bi-arrow-left"></i>
+                                    Kijelentkezés
                                 </Link>
                             </div>
                         </div>
