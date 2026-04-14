@@ -102,16 +102,22 @@ export default function Profile() {
                                     </div>
                                 )}
                             </div>
-
+                            
+                            {/* gombok */}
                             <div className="card-footer bg-transparent border-0 pb-4 text-center">
                                 <Link to="/homepage" className="btn btn-outline-light">
                                     <i className="bi bi-arrow-left"></i>
                                     Vissza a főoldalra
                                 </Link>
                                 
-                                <Link to="/" onClick={onLogout} className="btn btn-outline-light" style={{ marginLeft: '10px' }}>
+                                <Link to="/" onClick={onLogout} className="btn btn-outline-danger" style={{ marginLeft: '10px' }}>
                                     <i className="bi bi-arrow-left"></i>
                                     Kijelentkezés
+                                </Link>
+
+                                <Link className="btn btn-outline-light" style={{ marginLeft: '10px' }}>
+                                    <i className="bi bi-arrow-left"></i>
+                                    Profil módosítása
                                 </Link>
                             </div>
                         </div>
