@@ -14,14 +14,14 @@ export default function Admin() {
     const [message, setMessage] = useState('')
 
     useEffect(() => {
-        fetch("http://127.0.0.1:4000/users/all")
+        fetch("https://nodejs308.dszcbaross.edu.hu/users/all")
             .then(res => res.json())
             .then(data => setUsers(data)
                 .catch(err => console.error(err)))
     }, [])
 
     useEffect(() => {
-        fetch("http://127.0.0.1:4000/orders/all")
+        fetch("https://nodejs308.dszcbaross.edu.hu/orders/all")
             .then(res => res.json())
             .then(data => setOrders(data)
                 .catch(err => console.error(err)))
