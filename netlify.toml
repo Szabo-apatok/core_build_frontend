@@ -3,25 +3,25 @@
   publish = "dist"
 
 [[redirects]]
-  from = "/users/*"
+  from = "/users"
   to = "https://nodejs308.dszcbaross.edu.hu/users/:splat"
   status = 200
   force = true
 
 [[redirects]]
-  from = "/orders/*"
+  from = "/orders"
   to = "https://nodejs308.dszcbaross.edu.hu/orders/:splat"
   status = 200
   force = true
 
 [[redirects]]
-  from = "/products/*"
+  from = "/products"
   to = "https://nodejs308.dszcbaross.edu.hu/products/:splat"
   status = 200
   force = true
 
 [[redirects]]
-  from = "/tervezo/*"
+  from = "/tervezo"
   to = "https://nodejs308.dszcbaross.edu.hu/tervezo/:splat"
   status = 200
   force = true
