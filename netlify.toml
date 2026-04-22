@@ -9,6 +9,12 @@
   force = true
 
 [[redirects]]
+  from = "/orders/*"
+  to = "https://nodejs308.dszcbaross.edu.hu/orders/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
