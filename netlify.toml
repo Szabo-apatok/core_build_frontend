@@ -15,6 +15,18 @@
   force = true
 
 [[redirects]]
+  from = "/products/*"
+  to = "https://nodejs308.dszcbaross.edu.hu/products/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/tervezo/*"
+  to = "https://nodejs308.dszcbaross.edu.hu/tervezo/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
