@@ -1,4 +1,4 @@
-const BACKEND_URL = 'http://localhost:4000/orders';
+const BACKEND_URL = 'https://nodejs308.dszcbaross.edu.hu/orders';
 
 export async function createOrder(productId, quantity, paymentMethod) {
     const res = await fetch(`${BACKEND_URL}/create`, {

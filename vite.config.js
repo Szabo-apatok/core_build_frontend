@@ -13,13 +13,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/users': {
-        target: 'http://localhost:4000',
+        target: 'https://nodejs308.dszcbaross.edu.hu',
         changeOrigin: true,
       },
-      // '/tervezo': {
-      //   target: 'http://localhost:4000',
-      //   changeOrigin: true,
-      // },
     },
   },
 })

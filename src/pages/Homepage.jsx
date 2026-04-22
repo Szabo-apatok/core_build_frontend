@@ -29,7 +29,7 @@ export default function Homepage() {
     const products = [
         { id: 1, name: "Gamer PC PRO", price: "299.990 Ft", image: product1 },
         { id: 2, name: "RTX 4070 Ti", price: "389.990 Ft", image: product2 },
-        { id: 3, name: "AMD Ryzen 7", price: "129.990 Ft", image: product3 },
+        { id: 3, name: "Killer CORE PC", price: "129.990 Ft", image: product3 },
         { id: 4, name: "32GB RAM Kit", price: "49.990 Ft", image: product4 }
     ]
 

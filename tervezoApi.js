@@ -1,4 +1,4 @@
-const BACKEND_URL = 'http://localhost:4000/tervezo';
+const BACKEND_URL = 'https://nodejs308.dszcbaross.edu.hu/tervezo';
 
 export async function fetchProcessors() {
     const res = await fetch(`${BACKEND_URL}/processors`, {
