@@ -147,5 +147,8 @@ A **CoreBuild** egy React alapú, teljes funkcionalitású webalkalmazás, amely
 A CoreBuild egy teljes körű, felhasználóbarát webes alkalmazás, amely lehetővé teszi a számítógép-összeszerelés folyamatának digitális támogatását: a komponensek kiválasztásától kezdve a regisztráción át egészen a rendelés leadásáig. Az admin felület segítségével a felhasználók és rendelések menedzselése is megoldott. Az oldal modern technológiákra épül, és reszponzív kialakításának köszönhetően bármilyen eszközön kényelmesen használható.
 
 
+## Linkek
+Figma nézet: https://www.figma.com/design/TquTgFw8G4MoTlS8ueMMJm/CORE-BUILD-Project?node-id=0-1&t=V8DaBGSkTCc6oiE8-1
+
 -----------------------
 Készítette: [Szabó Attila, Szanyi Balázs] – CORE Build | Iskolai projekt, 2026.
